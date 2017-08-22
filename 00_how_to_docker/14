@@ -1,0 +1,8 @@
+docker run -it \ 
+           -d \ 
+           --name lair \ 
+		   -p 8080:80 \
+		   --link spawning-pool:db \
+		   -e WORDPRESS_DB_HOST=db \
+		   -e WORDPRESS_DB_PASSWORD=Kerrigan \
+		   wordpress
