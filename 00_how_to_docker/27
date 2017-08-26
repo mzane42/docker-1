@@ -1,0 +1,2 @@
+docker service ps engineering-bay
+docker service logs -f [task-id]
