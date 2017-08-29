@@ -10,7 +10,9 @@ RUN apt update && apt install -y wget tar bzip2 && \
     rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /entrypoint.sh
-EXPOSE 9987/udp 10011 30033
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
+
+EXPOSE 9987/udp 10011 30033
 
 CMD ["/opt/teamspeak/ts3server_startscript.sh", "start;"]
